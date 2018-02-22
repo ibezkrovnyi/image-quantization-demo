@@ -57,7 +57,7 @@ export class QuantizationUsage {
 	public quantize(img : HTMLImageElement, optionColors, optionPaletteQuantizer, optionImageDithering, optionColorDistance) : {palette : iq.utils.Palette, image : iq.utils.PointContainer, time : number, ssim : number, original : iq.utils.PointContainer} {
 		var pointBuffer : iq.utils.PointContainer,
 			originalPointBuffer : iq.utils.PointContainer,
-			paletteQuantizer : iq.palette.IPaletteQuantizer,
+			paletteQuantizer : iq.palette.AbstractPaletteQuantizer,
 			id = this._baseName(img.src)[ 0 ],
 			palette : iq.utils.Palette,
 			image : iq.utils.PointContainer;
@@ -134,9 +134,9 @@ export class QuantizationUsage {
 			case 5:
 				return new iq.distance.CIE94GraphicArts();
 			case 6:
-				return new iq.distance.EuclideanRgbQuantWOAlpha();
+				return new iq.distance.EuclideanRGBQuantWOAlpha();
 			case 7:
-				return new iq.distance.EuclideanRgbQuantWithAlpha();
+				return new iq.distance.EuclideanRGBQuantWithAlpha();
 			case 8:
 				return new iq.distance.ManhattanSRGB();
 			case 9:

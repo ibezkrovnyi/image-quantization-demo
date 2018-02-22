@@ -9,7 +9,11 @@
 		"noEmitOnError" : true,
 		"pretty" : true,
 		"forceConsistentCasingInFileNames" : true,
-		"diagnostics" : true
+		"diagnostics" : true,
+                "lib": [
+                   "dom",
+                   "esnext"
+                ]
 	},
 	"files" : [
 		"./app.ts"

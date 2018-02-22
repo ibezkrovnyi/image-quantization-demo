@@ -1,6 +1,7 @@
 {
+  "private": true,
   "author": "Igor Bezkrovny",
-  "name": "image-quantization-demo",
+  "name": "image-q-demo",
   "version": "0.0.1",
   "description": "Image Quantization Library Demo",
   "contributors": [],
@@ -26,16 +27,17 @@
     "url": "https://github.com/igor-bezkrovny/image-quantization/issues"
   },
   "scripts": {
-    "prepublish": "webpack"
+    "prepublish": "npm run build",
+    "build": "webpack"
   },
   "dependencies": {},
   "preferGlobal": false,
   "license": "MIT",
   "devDependencies": {
-    "image-q": "^1.1.1",
-    "source-map-loader": "^0.1.5",
-    "ts-loader": "^0.8.2",
-    "typescript": "^2.7.0-rc",
-    "webpack": "^1.13.1"
+    "image-q": "2.*",
+    "source-map-loader": "0.1.5",
+    "ts-loader": "0.8.2",
+    "typescript": "2.7.2",
+    "webpack": "1.13.1"
   }
 }

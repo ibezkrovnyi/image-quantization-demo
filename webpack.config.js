@@ -23,6 +23,10 @@ module.exports = {
 		}
 	},
 
+	externals: {
+		'image-q': 'image-q'
+	},
+
 	module : {
 		loaders : [
 			// All files with a '.ts' or '.tsx' extension will be handled by 'ts-loader'.
