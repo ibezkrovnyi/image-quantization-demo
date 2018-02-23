@@ -13,7 +13,7 @@ module.exports = {
     extensions: ['.ts', '.tsx', '.js']
   },
   externals: {
-    'image-q': 'image-q'
+    'image-q': 'window image-q'
   },
   module: {
     rules: [
