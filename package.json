@@ -35,8 +35,8 @@
   "license": "MIT",
   "devDependencies": {
     "image-q": "2.*",
-    "ts-loader": "^3.5.0",
+    "ts-loader": "3.5.0",
     "typescript": "2.7.2",
-    "webpack": "^3.11.0"
+    "webpack": "3.11.0"
   }
 }
