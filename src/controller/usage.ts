@@ -108,7 +108,7 @@ export class QuantizationUsage {
 		});
 
 		time     = Date.now() - time;
-		var ssim = new iq.quality.SSIM().compare(originalPointBuffer, pointBuffer);
+		var ssim = iq.quality.ssim(originalPointBuffer, pointBuffer);
 
 		this._checkImageAndPalette(image, palette, optionColors);
 
@@ -134,15 +134,15 @@ export class QuantizationUsage {
 			case 5:
 				return new iq.distance.CIE94GraphicArts();
 			case 6:
-				return new iq.distance.EuclideanRGBQuantWOAlpha();
+				return new iq.distance.EuclideanBT709NoAlpha();
 			case 7:
-				return new iq.distance.EuclideanRGBQuantWithAlpha();
+				return new iq.distance.EuclideanBT709();
 			case 8:
-				return new iq.distance.ManhattanSRGB();
+				return new iq.distance.ManhattanBT709();
 			case 9:
-				return new iq.distance.CMETRIC();
+				return new iq.distance.CMetric();
 			case 10:
-				return new iq.distance.PNGQUANT();
+				return new iq.distance.PNGQuant();
 			case 11:
 				return new iq.distance.ManhattanNommyde();
 		}

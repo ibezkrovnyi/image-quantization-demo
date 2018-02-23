@@ -1,41 +1,24 @@
-const libraryName = "app";
+var path = require('path');
+var webpack = require('webpack');
 
 module.exports = {
-	entry  : `${__dirname}/src/${libraryName}.ts`,
-	output : {
-		filename       : `${__dirname}/dist/${libraryName}.js`,
-		//path: `${__dirname}`,
-		library        : libraryName,
-		libraryTarget  : 'umd',
-		umdNamedDefine : true
-	},
-
-	// Enable sourcemaps for debugging webpack's output.
-	devtool : "source-map",
-
-	resolve : {
-		extensions : ["", ".webpack.js", ".web.js", ".ts", ".tsx", ".js"]
-	},
-
-	ts : {
-		compilerOptions : {
-			noEmit : false
-		}
-	},
-
-	externals: {
-		'image-q': 'image-q'
-	},
-
-	module : {
-		loaders : [
-			// All files with a '.ts' or '.tsx' extension will be handled by 'ts-loader'.
-			{test : /\.tsx?$/, loader : "ts-loader"}
-		],
-
-		preLoaders : [
-			// All output '.js' files will have any sourcemaps re-processed by 'source-map-loader'.
-			{test : /\.js$/, loader : "source-map-loader"}
-		]
-	}
-};
+  devtool: 'inline-source-map',
+  entry: './src/app.ts',
+  output: {
+		path: path.resolve(__dirname, 'dist'),
+    filename: 'app.js'
+  },
+  resolve: {
+    // Add `.ts` and `.tsx` as a resolvable extension.
+    extensions: ['.ts', '.tsx', '.js']
+  },
+  externals: {
+    'image-q': 'image-q'
+  },
+  module: {
+    rules: [
+      // all files with a `.ts` or `.tsx` extension will be handled by `ts-loader`
+      { test: /\.tsx?$/, loader: 'ts-loader' }
+    ]
+  }
+}
