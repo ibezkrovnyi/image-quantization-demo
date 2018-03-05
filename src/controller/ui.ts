@@ -34,7 +34,7 @@ export function update(quantize : boolean) {
 						imageQuantizerMethod   = parseInt((<webix.ui.richselect>$$("option-image")).getValue(), 10) - 2,
 						colorDistanceMethod    = parseInt((<webix.ui.richselect>$$("option-distance")).getValue(), 10);
 
-					quantizeResult = (new QuantizationUsage()).quantizeSync(img, colors, paletteQuantizerMethod, imageQuantizerMethod, colorDistanceMethod);
+					quantizeResult = (new QuantizationUsage()).quantize(img, colors, paletteQuantizerMethod, imageQuantizerMethod, colorDistanceMethod);
 				}
 			}
 		}
