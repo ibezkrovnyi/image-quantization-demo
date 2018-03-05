@@ -89,7 +89,7 @@ export class QuantizationUsage {
 		});
 
 		this._timeMark("...palette", function () {
-			palette = paletteQuantizer.quantize();
+			palette = paletteQuantizer.quantizeSync();
 		});
 
 		this._timeMark("...dither", () => {
@@ -104,7 +104,7 @@ export class QuantizationUsage {
 				imageQuantizer = new iq.image.ErrorDiffusionArray(distance, optionImageDithering, true, 0, false);
 			}
 
-			image = imageQuantizer.quantize(pointBuffer, palette);
+			image = imageQuantizer.quantizeSync(pointBuffer, palette);
 		});
 
 		time     = Date.now() - time;
